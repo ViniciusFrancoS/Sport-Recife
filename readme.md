@@ -2,7 +2,7 @@
 
 Este site é uma homenagem ao Sport Club do Recife, feita por um torcedor. Ele celebra a história, os ídolos e a paixão do time. O site tem apenas uma página, com design moderno e que funciona bem em qualquer dispositivo.
 
-**[➡️ Ver Projeto Ao Vivo](https://SEU-USUARIO.github.io/SEU-REPOSITORIO/)**
+**[➡️ Ver Projeto Ao Vivo](https://sport-recife.vercel.app/)**
 
 ---
 
@@ -41,4 +41,5 @@ Durante este projeto, melhorei meus conhecimentos em:
 * **Organizar o código** para facilitar mudanças futuras.
 * **Melhorar código existente** para ficar mais fácil de entender.
 * **Usar JavaScript moderno** sem precisar de bibliotecas extras.
+
 * **Criar uma boa experiência** para quem usa o site.
