@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700&display=swap');
+
+/* --- Configurações Globais e Variáveis de Cor --- */
+:root {
+    --vermelho-sport: #D30A0A;
+    --vermelho-escuro-sport: #8B0000;
+    --preto-sport: #000000;
+    --grafite: #1a1a1a;
+    --grafite-claro: #2c2c2c;
+    --branco: #FFFFFF;
+    --cinza-claro: #d1d1d1;
+    --amarelo-sport: #FFD700;
+    --fonte-titulo: 'Anton', sans-serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+}
+
+/* --- Estilos de Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--grafite);
+    color: var(--cinza-claro);
+    padding-top: 75px; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+/* --- Cabeçalho --- */
+header {
+    background-color: var(--preto-sport);
+    padding: 10px 0;
+    border-bottom: 5px solid var(--amarelo-sport);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+header.header-scrolled {
+    padding: 5px 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-container h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    color: var(--branco);
+}
+
+.nav-links {
+    display: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--amarelo-sport);
+}
+
+.menu-hamburger {
+    display: block;
+    font-size: 2rem;
+    color: var(--branco);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.mobile-nav-links.hidden {
+    display: none;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--branco);
+    text-decoration: none;
+}
+
+/* --- Seção Herói --- */
+.hero-gradient {
+    background: linear-gradient(135deg, var(--vermelho-sport) 0%, var(--vermelho-escuro-sport) 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: var(--branco);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-logo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    border: 6px solid var(--branco);
+    border-radius: 50%;
+}
+
+.hero-content h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--amarelo-sport); /* COR ALTERADA */
+}
+
+#tagline {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* --- Estilos Gerais de Seção --- */
+.content-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #333;
+}
+
+.content-section h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--branco);
+    position: relative; 
+    padding-bottom: 20px; 
+}
+
+.content-section h2::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100px; 
+    height: 5px; 
+    background-color: var(--amarelo-sport);
+    border-radius: 5px; 
+}
+
+.content-section h2.light-text {
+    color: var(--branco);
+}
+
+.content-section h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--vermelho-sport);
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.grid-2-cols {
+    display: grid;
+    gap: 50px;
+    align-items: center;
+}
+
+/* --- Seção Títulos --- */
+.sport-red {
+    background-color: var(--vermelho-sport);
+}
+
+.titles-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.title-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.title-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: var(--amarelo-sport);
+}
+
+.title-card-icon {
+    color: var(--amarelo-sport);
+    opacity: 0.5;
+    margin: 0 auto 15px;
+}
+
+.title-card .count {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--branco);
+}
+
+.title-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--branco);
+    min-height: 40px;
+}
+
+.title-card p {
+    font-size: 0.9rem;
+    color: var(--cinza-claro);
+    margin: 0;
+}
+
+/* --- Seção Elenco (Carrossel) --- */
+#team .section-header {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 40px;
+}
+
+#team .section-header h2 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#team .section-header h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+    gap: 20px;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.player-card-v2 {
+    position: relative;
+    flex: 0 0 260px;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+.player-card-v2:hover {
+    transform: scale(1.03);
+}
+
+.player-card-v2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.player-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.4) 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.player-number {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5rem;
+    color: var(--amarelo-sport);
+    line-height: 1;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.player-name {
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    line-height: 1.1;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.player-name span {
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--branco);
+    border: 2px solid var(--branco);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: var(--vermelho-sport);
+    border-color: var(--amarelo-sport);
+}
+
+.carousel-btn.prev {
+    left: -25px;
+}
+
+.carousel-btn.next {
+    right: -25px;
+}
+
+/* --- Seção Estádio --- */
+#stadium {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2023/03/ilha.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--branco);
+}
+
+.stadium-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.info-box {
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--branco);
+}
+
+.info-box.red-box { background-color: var(--vermelho-sport); }
+.info-box.black-box { background-color: var(--preto-sport); }
+.info-box .number { font-size: 2rem; font-weight: 700; }
+.info-box .label { font-size: 0.9rem; }
+
+/* --- Seção Novidades --- */
+.news-container {
+    text-align: center;
+}
+
+.news-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--amarelo-sport);
+    color: var(--preto-sport);
+}
+.btn-primary:hover {
+    background-color: #e6c100;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--branco);
+    color: var(--branco);
+}
+.btn-secondary:hover {
+    background-color: var(--branco);
+    color: var(--vermelho-sport);
+    transform: translateY(-2px);
+}
+
+.btn-red {
+    background-color: var(--vermelho-sport);
+    color: var(--branco);
+}
+.btn-red:hover {
+    background-color: var(--vermelho-escuro-sport);
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--preto-sport);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer h3 {
+    color: var(--amarelo-sport);
+    margin-bottom: 15px;
+}
+
+.footer-credit {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    color: var(--cinza-claro);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: var(--branco);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--amarelo-sport);
+    transform: translateY(-3px);
+}
+
+.social-links svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+}
+
+/* --- Animações --- */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Estilos para a Linha do Tempo --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--vermelho-sport);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--branco);
+    border: 4px solid var(--vermelho-sport);
+    top: 30px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-left: 20px;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--amarelo-sport);
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    background-color: var(--grafite-claro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.timeline-content h3 {
+    color: var(--amarelo-sport);
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: var(--cinza-claro);
+    margin-bottom: 0;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+    .menu-hamburger {
+        display: none;
+    }
+    .grid-2-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+    .titles-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .titles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-track {
+        scroll-snap-type: none; 
+    }
+    .timeline::after {
+        left: 20px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 15px;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 10px;
+        right: auto;
+    }
+
+    .carousel-container {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .titles-grid {
+        grid-template-columns: 1fr;
+    }
+}
